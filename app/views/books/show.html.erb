@@ -1,0 +1,70 @@
+
+<span class="span-notice"><%= notice %></span>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			<h1>User info</h1>
+			<table>
+				<thead>
+					<tr>
+						<th><p><%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p></th>
+					</tr>
+					<tr>
+						<th>name</th>
+						<th><p><%= @book.user.name %></p></th>
+					</tr>
+					<tr>
+						<th>introduction</th>
+						<th><p><%= @book.user.introduction %></p></th>
+					</tr>
+				</thead>
+			</table>
+			    <p><%= link_to edit_user_path(@user),class: "btn btn-default" do %><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i><% end %></p>
+			<div class="new-create">
+				<h1>New book</h1>
+				<%= form_for(@book) do |f| %>
+				<h4>Title</h4>
+				<div class="new-title"><%= f.text_field :title %></div>
+				<h4>Opinion</h4>
+				<div class="new-body"><%= f.text_area :body %></div>
+				<div class="create-book"><%= f.submit'Create Book' %></div>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-lg-9">
+			<table class="table table-striped">
+				<h2>Book detail</h2>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></br>
+							<%= link_to user_path(@book.user.id) do%><%= @book.user.name %><% end %>
+						</th>
+						<th><%= @book.title %></th>
+						<th><%= @book.body %></th>
+						<% if @book.user == current_user %>
+						<th><%= link_to "edit", edit_book_path(@book.id) %></th>
+						<th><%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+						<% end %>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+
+

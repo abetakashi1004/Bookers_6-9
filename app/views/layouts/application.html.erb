@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookersApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="slidemenu" ,width:100%;>
+            <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+              <h3>Bookers</h3>
+              <% if user_signed_in? %>
+              <li class="first-li"><%= link_to destroy_user_session_path,method: :delete do %><i class="glyphicon glyphicon-log-out"></i>logout<% end %></li>
+              <li><%= link_to books_path do %> <i class="glyphicon glyphicon-book"></i>Books<% end %></li>
+              <li><%= link_to users_path do%><i class="glyphicon glyphicon-user"></i>Users<% end %></li>
+              <li><%= link_to user_path(current_user.id) do%><i class="glyphicon glyphicon-home"></i> Home<% end %></li>
+
+              <% else %>
+
+              <li class="first-li"><%= link_to user_session_path do%><i class="glyphicon glyphicon-log-in"></i>login<% end %></li>
+              <li><%= link_to new_user_registration_path do%><i class="glyphicon glyphicon-edit"></i>sign up<% end %></li>
+              <li><%= link_to home_about_path do%><i class="glyphicon glyphicon-link"></i>About<% end %></li>
+              <li><%= link_to root_path do%><i class="glyphicon glyphicon-home"></i>Home<% end %></li>
+              <% end %>
+            </ul>
+          </div>
+
+    <%= yield %>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
+  </body>
+</html>

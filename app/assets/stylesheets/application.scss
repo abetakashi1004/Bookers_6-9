@@ -1,0 +1,148 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+*{
+	padding: 0;
+	margin: 0;
+}
+.span-notice{
+	margin: 10%;
+	color: green;
+}
+.container{
+	margin: 0 10%;
+}
+.slide-menu{
+	width: 100%;
+}
+.nav{
+	background-color: black;
+	width: 100%;
+	margin-right: 0;
+}
+.nav h3{
+	color: #fff;
+	display: inline-block;
+	margin-left: 10%;
+}
+.first-li{
+	margin-right: 10%;
+}
+.nav li{
+	float: right;
+	display: inline-block;
+}
+.nav a{
+	color: #9d9d9d;
+}
+.new-create{
+	width: 100%;
+}
+.create-book{
+	width: 100%;
+	text-align: center;
+}
+.new-title{
+	width: 100%;
+}
+.new-body{
+	width: 100%;
+}
+input[type="text"]{
+	width: 100%;
+}
+textarea[id="book_body"]{
+	width: 100%;
+}
+input[type=submit]{
+	width: 100%;
+	background-color:#337ab7;
+	color: #fff;
+	font-size: 13px;
+	height: 30px;
+}
+.btn-default{
+	width: 100%;
+}
+
+.edit{
+	width: 100%;
+}
+.edit .container{
+	width: 100%;
+}
+.item{
+	display: inline-block;
+	float:left;
+}
+.last-item{
+	float: right;
+}
+
+.profile-edit1{
+	width: 160px;
+	margin-left:10px;
+}
+.login-page, .sign_up-page{
+	width: 152px;
+	margin-left:10px;
+}
+.home-page{
+	width:555px;
+	margin:0 auto;
+	padding-top :70px;
+}
+.btn-1 .btn-default{
+	background-color:#5bc0de;
+}
+.btn-2 .btn-default{
+	background-color:#5cb85c;
+}
+footer{
+	width:100%;
+}
+footer p{
+	display:inline-block;
+	float:right;
+	margin-right:10%;
+}
+.about h1{
+	margin :0 ;
+}
+.about{
+	padding-top:10px;
+	margin-left:15px;
+}
+.space{
+	width:100%;
+	height:80px;
+	background-color:#fff;
+}
+.login-page h2, .sign_up-page h2{
+	margin:0;
+}
+.login-page, .sign_up-page{
+	margin-left:15px;
+}
+.profile-edit1 h1{
+	margin:0;
+}
+
+
+
